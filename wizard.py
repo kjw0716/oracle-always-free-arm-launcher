@@ -236,7 +236,7 @@ def edit_timing(config_path):
 
 def menu(config_path):
     while True:
-        print("\nOCI A1\n1. 配置向导\n2. 检查配置（只读）\n3. 启动/继续抢机\n4. 查看状态\n5. 请求停止\n6. 修改重试时间\n0. 退出")
+        print("\nOracle Always Free ARM Launcher\n1. 配置向导\n2. 检查配置（只读）\n3. 启动/继续抢机\n4. 查看状态\n5. 请求停止\n6. 修改重试时间\n0. 退出")
         choice = prompt("选择", "1" if not Path(config_path).exists() else "4")
         if choice == "0":
             return 0

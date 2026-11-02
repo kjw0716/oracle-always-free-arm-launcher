@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # Derived from Yohann0617/oci-helper, Copyright 2024 Yohann0617.
 # Modified: Python port of instance creation/retry logic; see NOTICE.txt.
-"""One-instance OCI A1 launcher. No AI, web server, database or telemetry."""
+"""Oracle Always Free ARM (Ampere A1) launcher: creates one instance. No AI, web server, database or telemetry."""
 from __future__ import annotations
 
 import argparse
@@ -540,7 +540,7 @@ def main(argv=None):
     for stream in (sys.stdout, sys.stderr):
         if hasattr(stream, "reconfigure"):
             stream.reconfigure(encoding="utf-8", errors="replace")
-    parser = argparse.ArgumentParser(description="精简 OCI A1 抢机：缺货重试，成功一台即停止，不调用 AI。")
+    parser = argparse.ArgumentParser(description="Oracle Always Free ARM 抢机：缺货重试，成功一台即停止，不调用 AI。")
     parser.add_argument("--config", default=str(Path(__file__).with_name("config.ini")))
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--check", action="store_true", help="只读检查账户、网络、镜像和资源用量")
