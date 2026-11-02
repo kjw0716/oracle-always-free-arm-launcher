@@ -207,7 +207,7 @@ class ReleaseTests(unittest.TestCase):
             with patch.object(build_release, "ROOT", root), patch.object(build_release, "FILES", ("config.example.ini", "grab.py")), contextlib.redirect_stdout(io.StringIO()):
                 archive = build_release.build()
             with zipfile.ZipFile(archive) as z:
-                self.assertEqual(set(z.namelist()), {"oci-a1-grabber/config.example.ini", "oci-a1-grabber/grab.py"})
+                self.assertEqual(set(z.namelist()), {"oracle-always-free-arm-launcher/config.example.ini", "oracle-always-free-arm-launcher/grab.py"})
 
     def test_packaging_refuses_long_realistic_identifier_in_source(self):
         with tempfile.TemporaryDirectory() as tmp:

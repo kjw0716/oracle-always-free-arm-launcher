@@ -114,7 +114,7 @@ python -m unittest discover -s tests -v
 python tools/build_release.py
 ```
 
-The release is `dist/oci-a1-grabber.zip`. An explicit allowlist includes source, docs, images, blank example config and tests. The builder scans for accidental real OCIDs and private-key material. `.gitignore` excludes local configs, common key files, runtime data and virtual environments.
+The release is `dist/oracle-always-free-arm-launcher.zip`. An explicit allowlist includes source, docs, images, blank example config and tests. The builder scans for accidental real OCIDs and private-key material. `.gitignore` excludes local configs, common key files, runtime data and virtual environments.
 
 Publish the source release, not a personal working directory. Documentation images are previews rendered from actual CLI output with demonstration inputs, without account data.
 

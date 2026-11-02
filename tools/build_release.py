@@ -36,11 +36,11 @@ def build():
         if re.search(rb"[A-Za-z]:\\Users\\", data):
             raise ValueError(f"Personal Windows path in {name}")
         files.append((name, data))
-    output = ROOT / "dist" / "oci-a1-grabber.zip"
+    output = ROOT / "dist" / "oracle-always-free-arm-launcher.zip"
     output.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED) as archive:
         for name, data in files:
-            archive.writestr("oci-a1-grabber/" + name, data)
+            archive.writestr("oracle-always-free-arm-launcher/" + name, data)
     print(f"Built {output.name}: {len(files)} release files; no local config, keys or runtime.")
     return output
 

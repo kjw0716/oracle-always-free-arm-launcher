@@ -1,18 +1,29 @@
-# OCI A1 Grabber
+<div align="center">
+
+# Oracle Always Free ARM Launcher · 甲骨文免费 ARM 抢机工具
+
+**总是遇到 “Out of host capacity”？让它替你自动重试创建 Oracle Cloud 永久免费 ARM 服务器（Ampere A1），成功一台后自动停止。**
+
+[![Tests](https://img.shields.io/github/actions/workflow/status/kjw0716/oracle-always-free-arm-launcher/tests.yml?style=flat-square&label=tests)](https://github.com/kjw0716/oracle-always-free-arm-launcher/actions/workflows/tests.yml)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](requirements.txt)
+[![Windows, Linux and macOS](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-475569?style=flat-square)](#快速开始)
+[![Oracle Cloud](https://img.shields.io/badge/Oracle%20Cloud-Always%20Free%20ARM-F80000?style=flat-square&logo=oracle&logoColor=white)](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
+[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-0F766E?style=flat-square)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/kjw0716/oracle-always-free-arm-launcher?style=flat-square&color=yellow)](https://github.com/kjw0716/oracle-always-free-arm-launcher/stargazers)
 
 [English](README.md) · **简体中文**
 
-按你设定的时间，自动重试创建 Oracle Cloud Ampere A1 实例。配置一次，按分钟重试，成功一台后自动停止。
-
-![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square)
-![Windows、Linux 和 macOS](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-475569?style=flat-square)
-[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-0F766E?style=flat-square)](LICENSE)
-
 [快速开始](#快速开始) · [时间设置](#设置重试时间) · [完整指南](docs/USAGE.zh-CN.md) · [常见问题](#常见问题)
 
-![终端菜单：配置、检查、启动、状态、停止与时间设置](docs/images/menu.png)
+<img src="docs/images/menu.png" alt="终端菜单：配置、检查、启动、状态、停止与时间设置">
 
-*根据程序实际输出渲染的终端预览。当前交互提示为中文，命令和配置字段使用英文。*
+<sub>根据程序实际输出渲染的终端预览。当前交互提示为中文，命令和配置字段使用英文。</sub>
+
+</div>
+
+## 为什么需要它
+
+Oracle Cloud 永久免费（Always Free）套餐包含 ARM（Ampere A1）算力，总计最多 4 OCPU、24 GB 内存，足够搭一台免费 VPS、游戏服务器或家庭实验室节点。但热门区域创建时经常提示 **Out of host capacity（容量不足）**，空位出现的时间也不固定。与其反复点击“创建”，不如配置一次、设好重试间隔，让它在后台替你“抢机”。创建成功一台后自动停止，并保存公网 IP。
 
 ## 能做什么
 
@@ -115,8 +126,16 @@ python -m unittest discover -s tests -v
 python tools/build_release.py
 ```
 
-源码包输出到 `dist/oci-a1-grabber.zip`，排除个人配置、密钥、日志和运行状态。仓库中的 CI 只运行离线测试，不会创建云服务器。
+源码包输出到 `dist/oracle-always-free-arm-launcher.zip`，排除个人配置、密钥、日志和运行状态。仓库中的 CI 只运行离线测试，不会创建云服务器。
 
 ## 许可证
 
 [Apache-2.0](LICENSE)。分发声明见 [NOTICE.txt](NOTICE.txt)。
+
+---
+
+<div align="center">
+
+如果它帮你抢到了免费 ARM 服务器，欢迎点个 [Star](https://github.com/kjw0716/oracle-always-free-arm-launcher/stargazers)，让更多人看到。
+
+</div>

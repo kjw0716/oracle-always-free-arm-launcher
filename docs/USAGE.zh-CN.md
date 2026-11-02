@@ -131,7 +131,7 @@ python -m unittest discover -s tests -v
 python tools/build_release.py
 ```
 
-构建结果为 `dist/oci-a1-grabber.zip`。打包脚本只收录明确列出的源码、文档、空白示例配置和测试，会检查实际 OCID、私钥块等误入内容。`.gitignore` 排除本机配置、密钥、日志、运行状态和虚拟环境。请只发布源码目录或构建后的 ZIP，不上传个人运行目录。
+构建结果为 `dist/oracle-always-free-arm-launcher.zip`。打包脚本只收录明确列出的源码、文档、空白示例配置和测试，会检查实际 OCID、私钥块等误入内容。`.gitignore` 排除本机配置、密钥、日志、运行状态和虚拟环境。请只发布源码目录或构建后的 ZIP，不上传个人运行目录。
 
 GitHub Actions 已配置 Windows / Ubuntu、Python 3.10 / 3.13 的离线测试。测试使用模拟 API，不使用任何真实账户或密钥。
 

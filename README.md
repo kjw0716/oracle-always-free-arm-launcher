@@ -1,18 +1,29 @@
-# OCI A1 Grabber
+<div align="center">
+
+# Oracle Always Free ARM Launcher
+
+**Tired of “Out of host capacity”? Let this tool keep trying to create your free Oracle Cloud ARM server (Ampere A1) until one is ready, then stop.**
+
+[![Tests](https://img.shields.io/github/actions/workflow/status/kjw0716/oracle-always-free-arm-launcher/tests.yml?style=flat-square&label=tests)](https://github.com/kjw0716/oracle-always-free-arm-launcher/actions/workflows/tests.yml)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](requirements.txt)
+[![Windows, Linux and macOS](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-475569?style=flat-square)](#quick-start)
+[![Oracle Cloud](https://img.shields.io/badge/Oracle%20Cloud-Always%20Free%20ARM-F80000?style=flat-square&logo=oracle&logoColor=white)](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
+[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-0F766E?style=flat-square)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/kjw0716/oracle-always-free-arm-launcher?style=flat-square&color=yellow)](https://github.com/kjw0716/oracle-always-free-arm-launcher/stargazers)
 
 **English** · [简体中文](README.zh-CN.md)
 
-Retry Oracle Cloud Ampere A1 instance creation on your schedule. Configure once, set an interval in minutes, and stop automatically after one instance is ready.
-
-![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square)
-![Windows, Linux and macOS](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-475569?style=flat-square)
-[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-0F766E?style=flat-square)](LICENSE)
-
 [Quick start](#quick-start) · [Timing](#set-your-timing) · [Full guide](docs/USAGE.en.md) · [FAQ](#faq)
 
-![Terminal menu with setup, validation, start, status, stop and timing controls](docs/images/menu.png)
+<img src="docs/images/menu.png" alt="Terminal menu with setup, validation, start, status, stop and timing controls">
 
-*Preview rendered from actual program output. CLI prompts are currently in Chinese; commands and configuration keys use English.*
+<sub>Preview rendered from actual program output. CLI prompts are currently in Chinese; commands and configuration keys use English.</sub>
+
+</div>
+
+## Why this exists
+
+Oracle Cloud's Always Free tier includes ARM (Ampere A1) compute, up to 4 OCPUs and 24 GB of memory in total, which is enough for a free VPS, game server or homelab node. In popular regions, though, creating one usually fails with **Out of host capacity**, and free slots open at unpredictable times. Instead of clicking **Create** over and over, configure this launcher once, choose how often to retry, and leave it running. It stops after one instance is created and saves its public IP.
 
 ## What it does
 
@@ -115,8 +126,16 @@ python -m unittest discover -s tests -v
 python tools/build_release.py
 ```
 
-The source release is written to `dist/oci-a1-grabber.zip`, excluding personal configuration, keys, logs and runtime files. The included CI runs offline tests; it does not create cloud instances.
+The source release is written to `dist/oracle-always-free-arm-launcher.zip`, excluding personal configuration, keys, logs and runtime files. The included CI runs offline tests; it does not create cloud instances.
 
 ## License
 
 [Apache-2.0](LICENSE). Distribution notices are in [NOTICE.txt](NOTICE.txt).
+
+---
+
+<div align="center">
+
+If this saved you from refreshing the Oracle console, a [star](https://github.com/kjw0716/oracle-always-free-arm-launcher/stargazers) helps other people find it.
+
+</div>

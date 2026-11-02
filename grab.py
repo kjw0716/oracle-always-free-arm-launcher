@@ -23,7 +23,7 @@ from dataclasses import dataclass
 
 import oci
 
-LOG = logging.getLogger("oci-grabber")
+LOG = logging.getLogger("oracle-always-free-arm-launcher")
 SHAPE = "VM.Standard.A1.Flex"
 LIVE = lambda x: x.lifecycle_state not in ("TERMINATED", "DELETED")
 
