@@ -1,0 +1,28 @@
+oci-grabber
+Derived from https://github.com/Yohann0617/oci-helper
+Copyright 2024 Yohann0617
+License: Apache License 2.0 (included as LICENSE)
+Upstream revision: f74709594727c17298d0e2a46b286bcc915b00d4
+
+Adapted upstream source:
+- src/main/java/com/yohann/ocihelper/config/OracleInstanceFetcher.java
+  createInstanceData, createInstance, createLaunchInstanceDetails, printInstance
+- src/main/java/com/yohann/ocihelper/service/impl/InstanceServiceImpl.java
+  createInstance task result handling
+- src/main/java/com/yohann/ocihelper/enums/ErrorEnum.java
+  capacity, quota, authentication and throttling error categories
+
+Modifications (2026-10-31): ported the launch/retry flow to a standalone Python
+program using Oracle's official SDK. Removed Spring, controllers, persistence
+database, web UI, Telegram/other broadcasts, password/cloud-init generation,
+network creation/deletion and unrelated management features. Added durable
+idempotency tokens, process locking, instance reconciliation, conservative
+resource limits, explicit error handling and optional capacity-report checks.
+No affiliation with or endorsement by Oracle or the upstream author.
+
+Modifications (2026-11-02): added a terminal configuration wizard, official OCI
+configuration import, key fingerprint validation, existing-network discovery,
+minute-based interval and run-duration settings, status/stop/resume controls,
+portable home-region support, cross-platform launchers, offline regression
+tests, CI, and an allowlisted source-release builder. Original creation and
+idempotency safeguards are retained. No personal credentials are distributed.

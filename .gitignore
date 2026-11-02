@@ -1,0 +1,25 @@
+# Local identity, keys and run state must never be published.
+config.ini
+config.*.ini
+!config.example.ini
+.config-*.tmp
+*.pem
+*.key
+*.pub
+id_rsa*
+id_ed25519*
+keys/
+.oci/
+.env
+.env.*
+runtime/
+*.log
+*.pid
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+dist/
+.DS_Store
+Thumbs.db
