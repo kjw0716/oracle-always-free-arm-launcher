@@ -28,7 +28,7 @@ class ConfigTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         (self.root / "api.pem").write_bytes(self.private)
         (self.root / "ssh.pub").write_text("ssh-ed25519 dGVzdA== example", encoding="utf-8")
         self.config = self.root / "config.ini"
@@ -139,7 +139,7 @@ class ControlTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         self.runtime = self.root / "runtime"
         self.runtime.mkdir()
         self.base = ["--config", str(self.root / "config.ini")]
@@ -199,7 +199,7 @@ class ControlTests(unittest.TestCase):
 class ReleaseTests(unittest.TestCase):
     def test_packaging_excludes_personal_files_even_if_present(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
+            root = Path(tmp).resolve()
             (root / "config.example.ini").write_text("[oracle]\nuser=\n[instance]\nssh_public_key_file=\n", encoding="utf-8")
             (root / "grab.py").write_text("print('example')", encoding="utf-8")
             (root / "config.ini").write_text("personal configuration", encoding="utf-8")
@@ -211,7 +211,7 @@ class ReleaseTests(unittest.TestCase):
 
     def test_packaging_refuses_long_realistic_identifier_in_source(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
+            root = Path(tmp).resolve()
             (root / "config.example.ini").write_text("[oracle]\nuser=\n[instance]\nssh_public_key_file=\n", encoding="utf-8")
             (root / "grab.py").write_text("ocid1.user.oc1.." + "a" * 80, encoding="utf-8")
             with patch.object(build_release, "ROOT", root), patch.object(build_release, "FILES", ("config.example.ini", "grab.py")), self.assertRaises(ValueError):
